@@ -26,6 +26,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
@@ -100,7 +101,7 @@ fun TapBankScreen(vm: CounterViewModel, context: Context) {
             Text(
                 text = count.toString(),
                 fontSize = 84.sp,
-                color = MaterialTheme.colorScheme.onBackground
+                color = Color.Yellow
             )
         }
 
