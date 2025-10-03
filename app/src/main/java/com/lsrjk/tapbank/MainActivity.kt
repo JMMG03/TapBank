@@ -140,6 +140,6 @@ fun vibrateOnce(context: Context) {
         vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
     } else {
         @Suppress("DEPRECATION")
-        vibrator.vibrate(30)
+        vibrator.vibrate(50)
     }
 }
