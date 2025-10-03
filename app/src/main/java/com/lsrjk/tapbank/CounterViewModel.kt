@@ -14,6 +14,9 @@ class CounterViewModel(private val repo: CounterRepository): ViewModel() {
     val count = repo.flow.map { it ?: 0L }
         .stateIn(viewModelScope, SharingStarted.Eagerly, 0L)
 
+    val hapticsEnabled = repo.hapticsFlow
+        .stateIn(viewModelScope, SharingStarted.Eagerly, true)
+
     fun increment() = viewModelScope.launch {
         val next = (count.value + 1L).coerceAtMost(Long.MAX_VALUE)
         repo.set(next)
@@ -21,6 +24,10 @@ class CounterViewModel(private val repo: CounterRepository): ViewModel() {
 
     fun reset() = viewModelScope.launch {
         repo.set(0L)
+    }
+
+    fun toggleHaptics() = viewModelScope.launch {
+        repo.setHapticsEnabled(!hapticsEnabled.value)
     }
 
     companion object {
