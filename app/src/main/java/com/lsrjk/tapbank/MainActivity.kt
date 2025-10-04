@@ -67,7 +67,7 @@ fun TapBankScreen(vm: CounterViewModel, context: Context) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("TapBank") },
+                title = { Text("OnlyTap") },
                 actions = {
                     IconButton(onClick = { showSettings = true }) {
                         Icon(
